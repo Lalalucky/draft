@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // function add(x, y) {
+    //     return x + y;
+    // }
+
+    // // 将函数赋值给一个变量
+    // var operator = add;
+
+    // // 将函数作为参数和返回值
+    // function a(op){
+    //     return op;
+    // }
+    // a(add)(1, 1)
+    
+    /************************************************/  
+    // function  foo(a,b) {
+    //     console.log(arguments)
+    // }
+    // foo(1,2)
+
+    /************************************************/
+    // var a = 1;
+    // var x = function () {
+    // console.log(a);
+    // };
+
+    // function f() {
+    // var a = 2;
+    // x();
+    // }
+
+    // f() // 1
+
+/************************************************/
+    // var x = function () {
+    // console.log(a);
+    // };
+
+    // function y(f) {
+    // var a = 2;
+    // f();
+    // }
+
+    // y(x);
+
+    // /*总之，函数执行时所在的作用域，是定义时的作用域，而不是调用时所在的作用域。*///
+    // 函数的length属性与实际传入的参数个数无关，只反映函数预期传入的参数个数。
+
+    // function foo(params) {
+    //     console.log(this.name)
+    // }
+    // var info={
+    //     'name':'code'
+    // }
+    // foo.apply(info);
+
+    // 函数参数如果是原始类型的值(数值，字符串，布尔值)，传递的方式是按值传递，在函数内部处理的值，只是原始值的拷贝，无论怎样修改，不会影响原始值。
+    //如果是复合类型的值(数组，对象，其他函数),传递方式是传址传递，也就是说，传入的就是原始值的地址，在函数内部的修改，会影响原始值，但是替换掉整个参数，也不会影响原始值。
+    var obj = [1, 2, 3];
+
+    function f(o) {
+    o = [2, 3, 4];
+    }
+    f(obj);
+
+    obj // [1, 2, 3];
+    // 这里就不会影响原始值
+
+    
+    
+</script>

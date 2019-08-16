@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
+<script>
+    // function f1() {
+    //     var n = 999;
+    //     nAdd = function () {
+    //         n += 1
+    //     }
+
+    //     function f2() {
+    //         alert(n);
+    //     }
+    //     return f2;
+    // }
+    // var result = f1();
+    // result(); //999
+    // nAdd();
+    // result(); //1000
+
+    function fn(n) {
+        var count = n;
+        var tem = function (m) {
+            count = count * m;
+            return tem;
+        };
+        tem.toString = function () {
+            return count
+        };
+        return tem;
+    }
+    console.log(fn(2)(3)(4)); //24
+
+    // var cost = (function () {
+    //     var args = [];
+
+    //     return function () {
+    //         if (arguments.length === 0) {
+    //             var money = 0;
+    //             for (var i = 0, l = args.length; i < l; i++) {
+    //                 money += args[i];
+    //             }
+    //             return money;
+    //         } else {
+    //             [].push.apply(args, arguments);
+    //         }
+    //     }
+    // }());
+    // cost(100); //未真正求值 
+    // cost(200); //未真正求值 
+    // cost(300); //未真正求值 
+    // console.log(cost()); //求值并输出：600
+
+    // var currying = function (fn) {
+    //     var args = [];
+
+    //     return function () {
+    //         if (arguments.length === 0) {
+    //             return fn.apply(this, args);
+    //         } else {
+    //             [].push.apply(args, arguments);
+    //             return arguments.callee;
+    //         }
+    //     }
+    // };
+
+    // function Student(name, age) {
+    //     //创建两个对象属性 name和age 当创建对象时 并给属性赋值
+    //     this.name = name;
+    //     this.age = age;
+    //     //创建一个intr属性是个方法属性
+    //     this.intr = function () {
+    //         console.log("this is a intr funciton");
+    //     }
+    //     //重新toString方法
+    //     this.toString = function () {
+    //         var str = "";
+    //         for (var key in this) {
+    //             //遍历对象中的的所有属性 如果这个属性不是方法则将其值连接起来并返回
+    //             if (typeof (this[key]) != "function") {
+    //                 str += key + ":" + this[key] + ",";
+    //             }
+    //         }
+    //         //返回所有非方法的属性值
+    //         return str;
+    //     }
+    // }
+
+    // //使用构造方法实例化一个stu对象
+    // var stu = new Student("lisa", 18);
+    // //调用对象的方法
+    // stu.intr();
+    // console.log(stu.toString());
+</script>

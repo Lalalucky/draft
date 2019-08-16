@@ -1,0 +1,28 @@
+任明明 2019/7/21 17:44:38
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> new document </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+        <script type="text/javascript">
+            var openWindow = confirm("确定打开该窗口?");
+            if (openWindow == true) { Wopen() }
+            else { document.write("开心每一天!"); }
+
+
+            function Wopen() {
+                window.open(
+                    ' http：//www.imooc.com/', '_blank', 'width=600,height=400,top=100px,left=0px,menubar=no,toolbar=no,status=no,scrollbars=no')
+            }
+    // 新窗口打开时弹出确认框，是否打开
+
+    // 通过输入对话框，确定打开的网址，默认为 http：//www.imooc.com/
+
+    //打开的窗口要求，宽400像素，高500像素，无菜单栏、无工具栏。
+
+
+        </script>
+    </head>
+
+</html>

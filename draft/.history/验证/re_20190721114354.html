@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>window.open</title>
+        <script type="text/javascript">
+            function Wopen() {
+
+                var window.open;
+                window.open = (
+                    'www.mokewang.com', '_blank', 'width=600,height=400,top=100px,left=0px,menubar=no,toolbar=no,status=no,scrollbars=no')
+                alert(window.open)
+            } 
+        </script>
+    </head>
+
+    <body>
+        <input name="button" type="button" onClick="Wopen()" value="点击我，打开新窗口!" />
+    </body>
+
+</html>

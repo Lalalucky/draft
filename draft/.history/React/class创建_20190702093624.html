@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
+<script>
+    // ES6中class关键字的简单使用
+
+    // - **ES6中的所有的代码都是运行在严格模式中的**
+    // - 1 它是用来定义类的，是ES6中实现面向对象编程的新方式
+    // - 2 使用`static`关键字定义静态属性
+    // - 3 使用`constructor`构造函数，创建实例属性
+    // - [参考](http://es6.ruanyifeng.com/#docs/class)
+
+    // 语法：
+    class Person {
+        // 实例的构造函数 constructor
+        constructor(age) {
+            // 实例属性
+            this.age = age
+        }
+        // 在class中定义方法 此处为实例方法 通过实例打点调用
+        sayHello() {
+            console.log('大家好，我今年' + this.age + '了');
+        }
+
+        // 静态方法 通过构造函数打点调用 Person.doudou()
+        static doudou() {
+            console.log('我是小明，我新get了一个技能，会暖床');
+        }
+    }
+    // 添加静态属性
+    Person.staticName = '静态属性'
+    // 实例化对象
+    const p = new Person(19)
+
+
+    // 实现继承的方式
+
+    class American extends Person {
+        constructor() {
+            // 必须调用super(), super表示父类的构造函数
+            super()
+            this.skin = 'white'
+            this.eyeColor = 'white'
+        }
+    }
+
+    // 创建react对象
+    // 注意：基于 `ES6` 中的class，需要配合 `babel` 将代码转化为浏览器识别的ES5语法
+    // 安装：`npm i -D babel-preset-env`
+
+    // react对象继承字React.Component
+    class ShoppingList extends React.Component {
+        constructor(props) {
+            super(props)
+        }
+        // class创建的组件中 必须有rander方法 且显示return一个react对象或者null
+        render() {
+            return ( 
+                <div className = "shopping-list" >
+                <h1 > Shopping List
+                for {
+                    this.props.name
+                } < /h1> <
+                ul >
+                <
+                li > Instagram < /li> <
+                li > WhatsApp < /li> <
+                /ul> <
+                /div>
+            )
+        }
+    }
+</script>
